@@ -1,0 +1,13 @@
+# Requirements for Python Serial Logger
+# This file contains all the dependencies needed to run the logger scripts
+
+# Serial communication library
+# Used for connecting to and communicating with serial devices
+pyserial==3.5
+
+# Note: The following packages are used but are part of Python's standard library:
+# - time: For sleep and timing functions
+# - threading: For running serial reading in separate threads
+# - logging: For file and console logging
+# - os: For file system operations and path handling
+# - datetime: For timestamp generation
