@@ -1,9 +1,0 @@
-2025-11-12 16:19:29,460,[m
-2025-11-12 16:19:29,462,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: 2 Sectors of 16384 bytes[0m
-2025-11-12 16:19:29,465,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: alloc wra: 0, 3fa0[0m
-2025-11-12 16:19:29,467,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: data wra: 0, 18[0m
-2025-11-12 16:19:29,469,[1;32muart:~$ [m[8D[JIxys cubesat started. Ground station is false
-2025-11-12 16:19:29,471,[1;32muart:~$ [m[8D[JTesting...
-2025-11-12 16:19:29,472,[1;32muart:~$ [m[8D[JGround station main loop
-2025-11-12 16:19:29,474,[1;32muart:~$ [m[8D[JSepsat Ground Station
-2025-11-12 16:19:30,478,[1;32muart:~$ [m[8D[J[1;32muart:~$ [m

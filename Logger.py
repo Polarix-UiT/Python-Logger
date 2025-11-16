@@ -1,3 +1,4 @@
+import argparse
 import serial
 import time
 import threading
@@ -7,7 +8,7 @@ from datetime import datetime
 import serial.tools.list_ports
 
 class SingleSerialLogger:
-    def __init__(self, port, baudrate=115200, timeout=1):
+    def __init__(self, port, baudrate=115200, timeout=1, folder_prefix='erik'):
         """
         Initialize the single serial logger
         
@@ -19,6 +20,7 @@ class SingleSerialLogger:
         self.port = port
         self.baudrate = baudrate
         self.timeout = timeout
+        self.folder_prefix = folder_prefix
         self.serial_conn = None
         self.running = False
         self.setup_logging()
@@ -26,7 +28,8 @@ class SingleSerialLogger:
     def setup_logging(self):
         """Setup logging configuration"""
         # Create logs directory if it doesn't exist
-        log_dir = os.path.join(os.path.dirname(__file__), 'logs_erik')
+        safe_prefix = str(self.folder_prefix).strip() or 'erik'
+        log_dir = os.path.join(os.path.dirname(__file__), f'logs_{safe_prefix}')
         os.makedirs(log_dir, exist_ok=True)
         
         # Create log filename with timestamp
@@ -184,26 +187,39 @@ def get_baud_rate(default=115200):
         return default
 
 def main():
+    parser = argparse.ArgumentParser(description="Single Serial Port Logger (Erik)")
+    parser.add_argument('--baudrate', '-b', type=int, help='Baud rate to use (overrides prompt)')
+    parser.add_argument('--prefix', '-p', type=str, help='Folder prefix for logs (e.g. "erik")')
+    args = parser.parse_args()
+
     print("Single Serial Port Logger")
     print("=" * 40)
-    
+
     # Get port selection
     port = get_port_selection()
     if not port:
         return
 
-    baudrate = get_baud_rate(57600)
+    # Determine baudrate: command-line overrides prompt
+    if args.baudrate:
+        baudrate = args.baudrate
+    else:
+        baudrate = get_baud_rate(115200)
+
+    # Folder prefix: CLI overrides default
+    folder_prefix = args.prefix if args.prefix is not None else 'erik'
 
     print(f"\nConfiguration:")
     print(f"Port: {port} at {baudrate} baud")
-    
+    print(f"Log folder prefix: {folder_prefix}")
+
     confirm = input("\nProceed with this configuration? (y/n): ").lower()
     if confirm not in ['y', 'yes']:
         print("Cancelled.")
         return
-    
+
     # Create and start the logger
-    logger = SingleSerialLogger(port, baudrate)
+    logger = SingleSerialLogger(port, baudrate, timeout=1, folder_prefix=folder_prefix)
     logger.start_logging()
 
 if __name__ == "__main__":
