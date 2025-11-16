@@ -205,8 +205,9 @@ def main():
     if not port:
         return
     
-    baudrate = get_baud_rate(115200)
-    
+    #baudrate = get_baud_rate(115200)
+    baudrate = 9600 
+
     print(f"\nConfiguration:")
     print(f"Port: {port} at {baudrate} baud")
     
