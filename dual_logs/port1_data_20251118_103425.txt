@@ -1,0 +1,11 @@
+2025-11-18 10:34:26,029,[m
+2025-11-18 10:34:26,031,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: 2 Sectors of 16384 bytes[0m
+2025-11-18 10:34:26,033,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: alloc wra: 0, 3fc8[0m
+2025-11-18 10:34:26,036,[1;32muart:~$ [m[8D[J[00:00:00.017,000] [0m<inf> fs_nvs: data wra: 0, 13[0m
+2025-11-18 10:34:26,038,[1;32muart:~$ [m[8D[JIxys cubesat started. Ground station is false
+2025-11-18 10:34:26,040,[1;32muart:~$ [m[8D[JTesting...
+2025-11-18 10:34:26,041,[1;32muart:~$ [m[8D[JGround station main loop
+2025-11-18 10:34:26,043,[1;32muart:~$ [m[8D[JSepsat Ground Station
+2025-11-18 10:34:26,046,[1;32muart:~$ [m[8D[J[00:00:00.645,000] [0m<inf> usb_cdc_acm: Device suspended[0m
+2025-11-18 10:34:26,049,[1;32muart:~$ [m[8D[J[00:00:01.260,000] [0m<inf> usb_cdc_acm: Device configured[0m
+2025-11-18 10:34:27,056,[1;32muart:~$ [m[8D[J[1;32muart:~$ [m
